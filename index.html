@@ -468,8 +468,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
 .cw-dot{width:9px;height:9px;border-radius:50%;background:rgba(94,174,232,.25)}
 .cw-title{margin-left:.6rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:rgba(94,174,232,.5)}
 .cw-screen{position:relative;height:340px;overflow:hidden;background:#080C10}
-.cw-screen canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.6}
-.cw-langs{position:absolute;inset:0;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:.6rem;padding:2rem;background:radial-gradient(ellipse at center,rgba(8,12,16,.72) 38%,rgba(8,12,16,.32))}
+.cw-screen canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:1}
+.cw-langs{position:absolute;inset:0;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:.6rem;padding:2rem;background:radial-gradient(ellipse at center,rgba(8,12,16,.55) 30%,rgba(8,12,16,.12))}
 .cw-langs span{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.07em;text-transform:uppercase;color:var(--white);background:rgba(12,17,24,.72);border:1px solid rgba(94,174,232,.25);border-radius:6px;padding:.42rem .85rem;transition:transform .25s,border-color .25s,color .25s;cursor:default}
 .cw-langs span:hover{border-color:var(--blue);color:var(--blue-lt);transform:translateY(-2px)}
 @media(max-width:600px){.cw-screen{height:280px}.cw-langs span{font-size:.85rem;padding:.35rem .7rem}}
@@ -483,6 +483,63 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
 .mon-node[data-cat="dluhopisy"]{fill:#B8C9E8}
 .mon-node[data-cat="insolvence"]{fill:#EDB458}
 .mon-node[data-cat="emise"]{fill:#64C9A8}
+
+
+/* ===== Analýzy: persona + SWOT ===== */
+.sv-persona{display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}
+.sv-persona .pa{width:30px;height:30px;border-radius:50%;background:rgba(94,174,232,.12);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.82rem;color:var(--blue);flex:none}
+.sv-persona .pl{font-size:.74rem;color:var(--white);line-height:1.2}
+.sv-persona .pl small{display:block;font-family:'DM Mono',monospace;font-size:.5rem;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;margin-top:.15rem}
+.sv-swot{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.sv-sw{background:rgba(94,174,232,.05);border-radius:5px;padding:.5rem .55rem}
+.sv-sw-l{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.32rem}
+.sv-sw-l.s{color:#4ADE80}.sv-sw-l.w{color:#EDB458}.sv-sw-l.o{color:var(--blue)}.sv-sw-l.t{color:#E87A7A}
+.sv-sw-tags{display:flex;flex-wrap:wrap;gap:.25rem}
+.sv-sw-tags span{font-size:.56rem;color:var(--text);background:rgba(94,174,232,.08);border-radius:3px;padding:.12rem .35rem}
+
+
+/* ===== SNAKE ===== */
+.snake{background:var(--dark3);border-top:1px solid rgba(94,174,232,.1)}
+.snake-lead{font-size:1.05rem;color:var(--text);font-weight:300;margin:.4rem 0 2rem;max-width:640px}
+.snake-lead b{color:var(--blue);font-weight:600}
+.snake-hud{display:flex;gap:1.8rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;margin-bottom:.9rem}
+.snake-hud b{color:var(--blue);font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700}
+.snake-stage{position:relative;display:inline-block;max-width:100%}
+#snakeCanvas{border:1px solid rgba(94,174,232,.18);border-radius:10px;background:#080C10;display:block;max-width:100%;height:auto;touch-action:none}
+.snake-over{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;background:rgba(8,12,16,.82);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);border-radius:10px;text-align:center;padding:1rem}
+.snake-over-msg{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;letter-spacing:.03em;color:var(--white);text-transform:uppercase}
+.snake-btn{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dark);background:var(--blue);border:none;border-radius:6px;padding:.7rem 1.6rem;cursor:pointer;transition:background .25s}
+.snake-btn:hover{background:var(--blue-lt)}
+.snake-dpad{display:flex;flex-direction:column;align-items:center;gap:.4rem;margin-top:1.2rem}
+.snake-dpad-mid{display:flex;gap:.4rem}
+.snake-dpad button{width:46px;height:40px;font-size:1rem;color:var(--blue);background:rgba(94,174,232,.06);border:1px solid rgba(94,174,232,.18);border-radius:7px;cursor:pointer;transition:all .2s;user-select:none}
+.snake-dpad button:hover,.snake-dpad button:active{background:rgba(94,174,232,.16);border-color:var(--blue)}
+.snake-hint{font-family:'DM Mono',monospace;font-size:.58rem;color:var(--dim);letter-spacing:.05em;margin-top:1rem}
+
+
+/* ===== SNAKE vylepšení ===== */
+.snake-word{display:inline-flex;gap:.28rem;align-items:center}
+.snake-word i{font-family:'Barlow Condensed',sans-serif;font-style:normal;font-weight:700;font-size:1.05rem;color:var(--dim);opacity:.45;transition:.25s}
+.snake-word i.lit{opacity:1;color:var(--white);text-shadow:0 0 9px rgba(94,174,232,.7)}
+.snake-word i.r.lit{color:var(--blue)}
+.snake-sound{background:none;border:none;font-size:1rem;cursor:pointer;opacity:.65;transition:opacity .2s;line-height:1}
+.snake-sound:hover{opacity:1}
+.snake-sound.off{opacity:.3;filter:grayscale(1)}
+.snake-frame{display:inline-block;padding:11px;border-radius:16px;background:linear-gradient(145deg,rgba(94,174,232,.55),rgba(42,127,191,.12));max-width:100%;box-shadow:0 0 24px rgba(94,174,232,.32),0 0 60px rgba(94,174,232,.14),inset 0 0 18px rgba(94,174,232,.1);animation:neonPulse 3.2s ease-in-out infinite}
+@keyframes neonPulse{0%,100%{box-shadow:0 0 22px rgba(94,174,232,.28),0 0 55px rgba(94,174,232,.12),inset 0 0 16px rgba(94,174,232,.08)}50%{box-shadow:0 0 34px rgba(94,174,232,.5),0 0 78px rgba(94,174,232,.22),inset 0 0 24px rgba(94,174,232,.14)}}
+.snake-levels{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center}
+.lvl{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text);background:rgba(94,174,232,.06);border:1px solid rgba(94,174,232,.18);border-radius:16px;padding:.35rem .7rem;cursor:pointer;transition:all .2s}
+.lvl:hover{border-color:rgba(94,174,232,.5)}
+.lvl.active{color:var(--dark);background:var(--blue);border-color:var(--blue)}
+@media(prefers-reduced-motion:reduce){.snake-frame{animation:none}}
+
+
+/* ===== SNAKE vycentrování ===== */
+.snake .container{text-align:center}
+.snake-lead{margin-left:auto;margin-right:auto}
+.snake-hud{justify-content:center}
+.snake-dpad{align-items:center;margin-left:auto;margin-right:auto}
+.snake-frame{margin-left:auto;margin-right:auto}
 
 </style>
 </head>
@@ -766,8 +823,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
 
 
     <!-- ANALÝZY (dovednosti) -->
-    <div class="eyebrow" style="margin-top:3.6rem">// Analýzy · základ každého systému</div>
-    <p class="sv-lead2"><b>Nejdřív analýza, potom kód.</b> Každý systém stavíme na reálných datech — ne na dohadech. Hloubková analýza firmy do 96 hodin.</p>
+    <div class="eyebrow" style="margin-top:5rem">Co analyzujeme</div>
+    <h2 class="sec-title">Analýzy<br><em>přesně na míru</em></h2>
     <div class="sv-grid" style="margin-top:1.4rem">
 
       <div class="sv-card">
@@ -842,6 +899,45 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
         </div>
         <a class="sv-cta" href="#kontakt">Poptat →</a>
       </div>
+
+      <div class="sv-card">
+        <div class="sv-chead">
+          <div class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+          <div><div class="sv-ctag">// PERSONA</div><div class="sv-ctitle">Cílová skupina</div></div>
+        </div>
+        <p class="sv-desc">Kdo přesně bude kupovat — demografie, motivace, kde se pohybují a jak se rozhodují.</p>
+        <div class="sv-ui">
+          <div class="sv-uibar"><span class="sv-dot"></span><span class="sv-dot"></span><span class="sv-dot"></span><span class="sv-uiname">persona://profil</span></div>
+          <div class="sv-uibody">
+            <div class="sv-persona"><span class="pa">F</span><span class="pl">Ideální zákazník<small>Firma 10–50 zaměstnanců</small></span></div>
+            <div class="sv-mrow hl"><span class="sv-mlabel">Primární</span><span class="sv-mbar"><span class="sv-mfill" style="width:62%"></span></span><span class="sv-mval">62%</span></div>
+            <div class="sv-mrow"><span class="sv-mlabel">Sekundární</span><span class="sv-mbar"><span class="sv-mfill" style="width:28%"></span></span><span class="sv-mval">28%</span></div>
+            <div class="sv-mrow"><span class="sv-mlabel">Okrajová</span><span class="sv-mbar"><span class="sv-mfill" style="width:10%"></span></span><span class="sv-mval">10%</span></div>
+          </div>
+        </div>
+        <a class="sv-cta" href="#kontakt">Poptat →</a>
+      </div>
+
+      <div class="sv-card">
+        <div class="sv-chead">
+          <div class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M12 4v16M4 12h16"/></svg></div>
+          <div><div class="sv-ctag">// SWOT</div><div class="sv-ctitle">SWOT analýza</div></div>
+        </div>
+        <p class="sv-desc">Silné a slabé stránky, příležitosti a hrozby — přehledný obraz, ze kterého se rozhoduje.</p>
+        <div class="sv-ui">
+          <div class="sv-uibar"><span class="sv-dot"></span><span class="sv-dot"></span><span class="sv-dot"></span><span class="sv-uiname">swot://prehled</span></div>
+          <div class="sv-uibody">
+            <div class="sv-swot">
+              <div class="sv-sw"><div class="sv-sw-l s">Silné</div><div class="sv-sw-tags"><span>Rychlost</span><span>Cena</span></div></div>
+              <div class="sv-sw"><div class="sv-sw-l w">Slabé</div><div class="sv-sw-tags"><span>Značka</span></div></div>
+              <div class="sv-sw"><div class="sv-sw-l o">Příležitosti</div><div class="sv-sw-tags"><span>Nové trhy</span></div></div>
+              <div class="sv-sw"><div class="sv-sw-l t">Hrozby</div><div class="sv-sw-tags"><span>Konkurence</span></div></div>
+            </div>
+          </div>
+        </div>
+        <a class="sv-cta" href="#kontakt">Poptat →</a>
+      </div>
+
 
     </div>
 
@@ -937,38 +1033,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact-sec" id="kontakt">
-  <div class="container">
-    <div class="eyebrow">Kontakt</div>
-    <h2 class="sec-title">Pojďme<br><em>na to společně</em></h2>
-    <div class="contact-box">
-      <div class="c-left">
-        <div class="c-tag">// CLARIX STUDIO</div>
-        <div class="c-name">Milan Zedníček</div>
-        <div class="c-role">Developer Studio</div>
-        <a href="tel:+420720396024" class="c-tel">+420 720 396 024</a>
-        <div class="c-locations">
-          <span>›</span> Praha<br>
-          <span>›</span> Hradec Králové<br>
-          <span>›</span> Pardubice<br>
-          <span>›</span> Online konzultace kdekoli
-        </div>
-        <a href="tel:+420720396024" class="btn-contact">
-          Kontaktujte nás
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="c-right">
-        <div class="c-claim">
-          Máte proces, který vás brzdí?<br>
-          <em>Postavíme na něj systém.</em>
-        </div>
-        <p class="c-sub">Nápad na software, CRM nebo platformu? První konzultace je nezávazná — podíváme se na váš byznys a řekneme narovinu, co by dávalo smysl postavit. Přijďte s otázkou, odejdete s jasnou odpovědí.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <!-- ABOUT COMPANY -->
@@ -1054,6 +1119,81 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
   </div>
 </section>
 
+<!-- CONTACT -->
+<section class="contact-sec" id="kontakt">
+  <div class="container">
+    <div class="eyebrow">Kontakt</div>
+    <h2 class="sec-title">Pojďme<br><em>na to společně</em></h2>
+    <div class="contact-box">
+      <div class="c-left">
+        <div class="c-tag">// CLARIX STUDIO</div>
+        <div class="c-name">Milan Zedníček</div>
+        <div class="c-role">Developer Studio</div>
+        <a href="tel:+420720396024" class="c-tel">+420 720 396 024</a>
+        <div class="c-locations">
+          <span>›</span> Praha<br>
+          <span>›</span> Hradec Králové<br>
+          <span>›</span> Pardubice<br>
+          <span>›</span> Online konzultace kdekoli
+        </div>
+        <a href="tel:+420720396024" class="btn-contact">
+          Kontaktujte nás
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="c-right">
+        <div class="c-claim">
+          Máte proces, který vás brzdí?<br>
+          <em>Postavíme na něj systém.</em>
+        </div>
+        <p class="c-sub">Nápad na software, CRM nebo platformu? První konzultace je nezávazná — podíváme se na váš byznys a řekneme narovinu, co by dávalo smysl postavit. Přijďte s otázkou, odejdete s jasnou odpovědí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNAKE -->
+<section class="snake" id="snake">
+  <div class="container">
+    <div class="eyebrow">// Easter egg</div>
+    <h2 class="sec-title">Došli jste <em>až sem?</em></h2>
+    <p class="snake-lead">Super. Zahrajte si online naši <b>SNAKE</b> v podání Clarix Studia — sbírejte písmena a složte <b>CLARIX</b>.</p>
+
+    <div class="snake-hud">
+      <span>Skóre <b id="snScore">0</b></span>
+      <span>Rekord <b id="snBest">0</b></span>
+      <span class="snake-word" id="snWord"><i data-l="0">C</i><i data-l="1">L</i><i data-l="2">A</i><i data-l="3" class="r">R</i><i data-l="4">I</i><i data-l="5">X</i></span>
+      <button class="snake-sound" id="snSound" aria-label="Přepnout zvuk">&#128266;</button>
+    </div>
+
+    <div class="snake-frame">
+      <div class="snake-stage">
+        <canvas id="snakeCanvas" width="720" height="384"></canvas>
+        <div class="snake-over" id="snOver">
+          <div class="snake-over-msg" id="snMsg">Nazdar hráči! Vyber obtížnost a hraj.</div>
+          <div class="snake-levels" id="snLevels">
+            <button class="lvl" data-sp="260">Pohoda</button>
+            <button class="lvl active" data-sp="185">Normál</button>
+            <button class="lvl" data-sp="135">Rychlík</button>
+            <button class="lvl" data-sp="90">Šílenec</button>
+          </div>
+          <button class="snake-btn" id="snStart">Hrát</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="snake-dpad">
+      <button data-dir="up" aria-label="nahoru">&#9650;</button>
+      <div class="snake-dpad-mid">
+        <button data-dir="left" aria-label="vlevo">&#9664;</button>
+        <button data-dir="down" aria-label="dolů">&#9660;</button>
+        <button data-dir="right" aria-label="vpravo">&#9654;</button>
+      </div>
+    </div>
+    <div class="snake-hint">Ovládání: šipky / WASD · na mobilu tahni prstem po ploše</div>
+  </div>
+</section>
+
 <footer>
   <div class="f-left">
     <span class="f-name">CLA<span class="cx">R</span>IX</span>
@@ -1118,24 +1258,129 @@ footer{background:var(--dark2);border-top:1px solid rgba(94,174,232,.06);padding
   var cv=document.getElementById('matrixCanvas'); if(!cv) return;
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var ctx=cv.getContext('2d');
-  var chars='01<>/{}()[];=+-*&|abcdefFRNPYTHSQLTSXΩλ$#'.split('');
-  var fs=14, cols, drops;
-  function resize(){ cv.width=cv.clientWidth; cv.height=cv.clientHeight; cols=Math.max(1,Math.floor(cv.width/fs)); drops=[]; for(var i=0;i<cols;i++) drops[i]=Math.random()*cv.height/fs; }
-  resize(); window.addEventListener('resize',resize);
+  var chars='01<>/{}()[];=+-*&|abcdefFRNPYTHSQLTSX$#'.split('');
+  var fs=15, cols, drops, LW=0, LH=0, dpr=1;
+  function resize(){
+    var w=cv.clientWidth||cv.offsetWidth, hh=cv.clientHeight||cv.offsetHeight;
+    if(w<2||hh<2) return;
+    LW=w; LH=hh; dpr=Math.min(window.devicePixelRatio||1,2.5);
+    cv.width=Math.round(LW*dpr); cv.height=Math.round(LH*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var nc=Math.max(1,Math.floor(LW/fs));
+    if(nc!==cols){ cols=nc; drops=[]; for(var i=0;i<cols;i++) drops[i]=Math.random()*LH/fs; }
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  window.addEventListener('load',resize);
+  if(window.ResizeObserver){ try{ new ResizeObserver(resize).observe(cv); }catch(e){} }
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(resize); }
   function draw(){
-    ctx.fillStyle='rgba(8,12,16,0.10)'; ctx.fillRect(0,0,cv.width,cv.height);
-    ctx.font=fs+'px monospace';
-    for(var i=0;i<drops.length;i++){
-      var ch=chars[Math.floor(Math.random()*chars.length)];
-      var x=i*fs, y=drops[i]*fs;
-      var b=Math.random();
-      ctx.fillStyle = b>0.94 ? 'rgba(143,214,255,0.95)' : (b>0.6 ? 'rgba(94,174,232,0.75)' : 'rgba(42,127,191,0.5)');
+    if(!cols||LW<2) return;
+    ctx.shadowBlur=0; ctx.fillStyle='rgba(8,12,16,0.075)'; ctx.fillRect(0,0,LW,LH);
+    ctx.font='700 '+fs+'px "DM Mono", monospace';
+    for(var i=0;i<cols;i++){
+      var ch=chars[(Math.random()*chars.length)|0], x=i*fs, y=drops[i]*fs, b=Math.random();
+      if(b>0.9){ ctx.shadowColor='#8FE6FF'; ctx.shadowBlur=18; ctx.fillStyle='rgba(230,249,255,1)'; }
+      else if(b>0.45){ ctx.shadowColor='#33B5FF'; ctx.shadowBlur=13; ctx.fillStyle='rgba(64,186,255,1)'; }
+      else { ctx.shadowColor='#1E86E0'; ctx.shadowBlur=7; ctx.fillStyle='rgba(42,150,236,0.9)'; }
       ctx.fillText(ch,x,y);
-      if(y>cv.height && Math.random()>0.975) drops[i]=0;
+      if(y>LH && Math.random()>0.975) drops[i]=0;
       drops[i]+=0.5;
     }
+    ctx.shadowBlur=0;
   }
-  setInterval(draw,58);
+  setInterval(draw,55);
+})();
+</script>
+<script>
+(function(){
+  var cv=document.getElementById('snakeCanvas'); if(!cv) return;
+  var ctx=cv.getContext('2d');
+  var LW=cv.width, LH=cv.height, dpr=Math.min(window.devicePixelRatio||1,2.5);
+  cv.width=Math.round(LW*dpr); cv.height=Math.round(LH*dpr); cv.style.width=LW+'px'; ctx.setTransform(dpr,0,0,dpr,0,0);
+  var CELL=24, NX=Math.round(LW/CELL), NY=Math.round(LH/CELL), LETTERS='CLARIX';
+  var snake,beads,dir,nextDir,food,score,best=0,timer,running=false,speed,baseSpeed=185,letterIdx=0,collected=[],pendingGap=false;
+  var over=document.getElementById('snOver'), msg=document.getElementById('snMsg'), startBtn=document.getElementById('snStart'),
+      scoreEl=document.getElementById('snScore'), bestEl=document.getElementById('snBest'),
+      wordEl=document.getElementById('snWord'), soundBtn=document.getElementById('snSound'),
+      levelWrap=document.getElementById('snLevels');
+  var wletters=wordEl.querySelectorAll('i');
+
+  var actx=null, soundOn=true;
+  function ensureAudio(){ if(!actx){ try{ actx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } if(actx&&actx.state==='suspended'){ actx.resume(); } }
+  function beep(freq,dur,type,vol){ if(!soundOn||!actx)return; try{ var o=actx.createOscillator(),g=actx.createGain(); o.type=type||'square'; o.frequency.value=freq; o.connect(g); g.connect(actx.destination); var t=actx.currentTime; g.gain.setValueAtTime(vol||0.05,t); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); o.start(t); o.stop(t+dur);}catch(e){} }
+  function sEat(){ beep(680,0.08,'square',0.05); }
+  function sCrash(){ beep(190,0.28,'sawtooth',0.09); setTimeout(function(){beep(110,0.32,'sawtooth',0.08);},70); }
+  function sBonus(){ [523,659,784,1047].forEach(function(f,i){ setTimeout(function(){beep(f,0.13,'triangle',0.06);}, i*95); }); }
+  soundBtn.addEventListener('click',function(){ soundOn=!soundOn; soundBtn.classList.toggle('off',!soundOn); soundBtn.innerHTML= soundOn ? '&#128266;' : '&#128263;'; });
+
+  function updateWord(){ wletters.forEach(function(el,i){ el.classList.toggle('lit', collected.indexOf(i)>=0); }); }
+  function resetWord(){ collected=[]; letterIdx=0; updateWord(); }
+  function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+  function occupied(x,y){ return snake.some(function(s){return s.x===x&&s.y===y;}); }
+  function placeFood(){ do{food={x:(Math.random()*NX)|0,y:(Math.random()*NY)|0};}while(occupied(food.x,food.y)); }
+  function reset(){ var cy=(NY/2)|0; snake=[{x:8,y:cy},{x:7,y:cy},{x:6,y:cy}]; beads=[]; dir={x:1,y:0}; nextDir=dir; score=0; speed=baseSpeed; pendingGap=false; scoreEl.textContent=0; resetWord(); placeFood(); }
+
+  function draw(){
+    ctx.clearRect(0,0,LW,LH);
+    ctx.strokeStyle='rgba(94,174,232,0.05)'; ctx.lineWidth=1;
+    for(var i=1;i<NX;i++){ctx.beginPath();ctx.moveTo(i*CELL,0);ctx.lineTo(i*CELL,LH);ctx.stroke();}
+    for(var j=1;j<NY;j++){ctx.beginPath();ctx.moveTo(0,j*CELL);ctx.lineTo(LW,j*CELL);ctx.stroke();}
+    var fx=food.x*CELL, fy=food.y*CELL, fch=LETTERS.charAt(letterIdx);
+    ctx.fillStyle='rgba(94,174,232,0.12)'; rr(fx+2,fy+2,CELL-4,CELL-4,4); ctx.fill();
+    ctx.strokeStyle='rgba(94,174,232,0.5)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.fillStyle=(letterIdx===3)?'#5EAEE8':'#F0F6FC';
+    ctx.font='bold '+Math.round(CELL*0.72)+'px "Barlow Condensed",sans-serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.shadowColor='#5EAEE8'; ctx.shadowBlur=8; ctx.fillText(fch,fx+CELL/2,fy+CELL/2+1); ctx.shadowBlur=0;
+    snake.forEach(function(s,i){
+      var x=s.x*CELL, y=s.y*CELL, L=(i>=1&&beads[i-1])?beads[i-1]:'';
+      if(L){
+        ctx.fillStyle='#0E1723'; rr(x+1,y+1,CELL-2,CELL-2,4); ctx.fill();
+        ctx.strokeStyle='rgba(94,174,232,0.55)'; ctx.lineWidth=1.2; ctx.stroke();
+        ctx.fillStyle=(L==='R')?'#5EAEE8':'#F0F6FC';
+        ctx.font='bold '+Math.round(CELL*0.7)+'px "Barlow Condensed",sans-serif';
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        ctx.fillText(L,x+CELL/2,y+CELL/2+1);
+      } else {
+        var a=Math.max(0.34,0.92-i*0.02);
+        ctx.fillStyle=i===0?'#A8D4F5':'rgba(94,174,232,'+a+')';
+        rr(x+1.5,y+1.5,CELL-3,CELL-3,4); ctx.fill();
+      }
+    });
+  }
+  function loop(){ clearInterval(timer); timer=setInterval(tick,speed); }
+  function tick(){
+    dir=nextDir;
+    var head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+    if(head.x<0||head.x>=NX||head.y<0||head.y>=NY||occupied(head.x,head.y)){ return gameOver(); }
+    var ate=(head.x===food.x&&head.y===food.y), grow=false, reloop=false;
+    if(ate){
+      grow=true; beads.unshift(LETTERS.charAt(letterIdx));
+      score++; scoreEl.textContent=score; if(score>best){best=score;bestEl.textContent=best;}
+      collected.push(letterIdx); updateWord(); sEat();
+      if(letterIdx===LETTERS.length-1){ score+=5; scoreEl.textContent=score; if(score>best){best=score;bestEl.textContent=best;} sBonus(); setTimeout(resetWord,450); letterIdx=0; pendingGap=true; }
+      else letterIdx++;
+      placeFood();
+      if(speed>78){ speed-=2; reloop=true; }
+    } else if(pendingGap){ grow=true; beads.unshift(''); pendingGap=false; }
+    snake.unshift(head);
+    if(!grow) snake.pop();
+    draw();
+    if(reloop) loop();
+  }
+  function start(){ ensureAudio(); reset(); running=true; over.style.display='none'; draw(); loop(); }
+  function gameOver(){ running=false; clearInterval(timer); sCrash(); msg.textContent='Skóre '+score+' — nevadí, hraj znova :)'; startBtn.textContent='Hrát znovu'; over.style.display='flex'; }
+  function setDir(x,y){ if(!running)return; if(x===-dir.x&&y===-dir.y)return; nextDir={x:x,y:y}; }
+
+  levelWrap.querySelectorAll('.lvl').forEach(function(b){ b.addEventListener('click',function(){ baseSpeed=parseInt(b.dataset.sp,10)||185; levelWrap.querySelectorAll('.lvl').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); }); });
+  document.addEventListener('keydown',function(e){ var k=(e.key||'').toLowerCase(); var m={arrowup:[0,-1],w:[0,-1],arrowdown:[0,1],s:[0,1],arrowleft:[-1,0],a:[-1,0],arrowright:[1,0],d:[1,0]}; if(m[k]){ if(running)e.preventDefault(); setDir(m[k][0],m[k][1]); } });
+  document.querySelectorAll('.snake-dpad button').forEach(function(b){ b.addEventListener('click',function(){ var d={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]}[b.dataset.dir]; if(d)setDir(d[0],d[1]); }); });
+  var tsx,tsy;
+  cv.addEventListener('touchstart',function(e){var t=e.touches[0];tsx=t.clientX;tsy=t.clientY;},{passive:true});
+  cv.addEventListener('touchend',function(e){var t=e.changedTouches[0];var dx=t.clientX-tsx,dy=t.clientY-tsy; if(Math.abs(dx)<10&&Math.abs(dy)<10)return; if(Math.abs(dx)>Math.abs(dy))setDir(dx>0?1:-1,0); else setDir(0,dy>0?1:-1);});
+  startBtn.addEventListener('click',start);
+  reset(); draw();
 })();
 </script>
 </body>
